@@ -1,4 +1,5 @@
 const flightController = require('../controller/FlightController')
+const auth = require('../middlewares/AuthMiddle');
 
 let setRouter = (app) =>{
 
@@ -9,7 +10,7 @@ let setRouter = (app) =>{
 
     app.post(`${baseUrl}/createflight`, flightController.createFlightList);
 
-    app.post(`${baseUrl}/delete/:countryId`, flightController.deleteFlightList);
+    app.post(`${baseUrl}/delete/:countryId/:authToken`, auth.isAuthenticated, flightController.deleteFlightList);
 }
 
 module.exports = {

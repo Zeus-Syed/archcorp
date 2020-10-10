@@ -2,13 +2,10 @@ const mongoose = require('mongoose');
 require('../models/flight');
 const FlightModel = mongoose.model('Flight');
 const shortId = require('shortid');
-const time = require('../libs/timeLib')
-const token = require('../libs/tokenLib')
-const passwordLib = require('../libs/generatePasswordLib')
-const response = require('../libs/responseLib')
-const check = require('../libs/checkLib')
-const validateInput = require('../libs/paramsValidationLib');
-const logger = require('../libs/loggerLib')
+const time = require('../libs/timeLib');
+const response = require('../libs/responseLib');
+const check = require('../libs/checkLib');
+const logger = require('../libs/loggerLib');
 
 
 let getAllFlights = (req, res) => {
